@@ -47,7 +47,7 @@ spec:
               path: /management/health/liveness
               port: http
           readinessProbe:
-             periodSeconds: 60
+            periodSeconds: 60
             initialDelaySeconds: 20
             httpGet:
               path: /management/health/readiness
