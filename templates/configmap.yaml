@@ -5,7 +5,7 @@ data:
   application.yaml: |
     spring:
       datasource: 
-        url: jdbc:postgresql://postgresql.database.svc:5432/categorizerç
+        url: jdbc:postgresql://postgresql.database.svc:5432/categorizer
       hikari:
         maximun-pool-size: 15
         max-life-time: 600000
