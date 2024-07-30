@@ -60,7 +60,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: application-yaml
-              mountPath: /workspace/source/src/BOOT-INF
+              mountPath: /workspace/source/src/config
           volumes:
             - name: application-yaml
               configMap:
