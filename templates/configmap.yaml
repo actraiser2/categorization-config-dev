@@ -2,8 +2,13 @@ apiVersion: v1
 data:
   SPRING_DATASOURCE_USERNAME: jmbesada
   SPRING_DATASOURCE_PASSWORD: fenix000
-  SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql.database.svc:5432/categorizer
-  SPRING_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE: "15"
+  application.yaml: |
+    spring:
+      datasource: 
+        url: jdbc:postgresql://postgresql.database.svc:5432/categorizerç
+      hikari:
+        maximun-pool-size: 15
+        max-life-time: 600000
 kind: ConfigMap
 metadata:
   name: categorizer
