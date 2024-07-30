@@ -61,13 +61,13 @@ spec:
           volumeMounts:
             - name: application-yaml
               mountPath: /workspace/source/src/config
-          volumes:
-            - name: application-yaml
-              configMap:
-                name: categorizer
-                items:
-                  - key: application.yaml
-                    path: application.yaml
+      volumes:
+        - name: application-yaml
+          configMap:
+            name: categorizer
+            items:
+              - key: application.yaml
+                path: application.yaml
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
