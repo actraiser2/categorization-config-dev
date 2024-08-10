@@ -37,7 +37,7 @@ spec:
                 secretKeyRef:
                   name: categorizer
                   key: DATASOURCE_PASSWORD
-            - name: SPRING_DATASOURCE_NAME
+            - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: categorizer
