@@ -31,9 +31,6 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
-          envFrom:
-            - configMapRef:
-                name: categorizer
           env:
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
