@@ -43,8 +43,8 @@ spec:
             - name: SPRING_DATASOURCE_NAME
               valueFrom:
                 secretKeyRef:
-                  - name: categorizer
-                    key: DATASOURCE_USERNAME
+                  name: categorizer
+                  key: DATASOURCE_USERNAME
                 
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
