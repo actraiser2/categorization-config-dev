@@ -35,11 +35,17 @@ spec:
             - configMapRef:
                 name: categorizer
           env:
-            name: SPRING_DATASOURCE_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: categorizer
-                key: DATASOURCE_PASSWORD
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: categorizer
+                  key: DATASOURCE_PASSWORD
+            - name: SPRING_DATASOURCE_NAME
+              valueFrom:
+                secretKeyRef:
+                  - name: categorizer
+                    key: DATASOURCE_USERNAME
+                
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
