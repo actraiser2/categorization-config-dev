@@ -28,8 +28,8 @@ podAnnotations:
   vault.hashicorp.com/role: categorizer
   vault.hashicorp.com/agent-inject-secret-config: categorizer/database
   vault.hashicorp.com/agent-inject-template-config: |
-     export VAULT_DATASOURCE_USERNAME={{ .Data.data.username }}
-     export VAULT_DATASOURCE_PASSWORD={{ .Data.data.password }}
+     export VAULT_DATASOURCE_USERNAME="{{ .data.data.username }}"
+     export VAULT_DATASOURCE_PASSWORD="{{ .data.data.password }}"
 podSecurityContext: {}
   # fsGroup: 2000
 
