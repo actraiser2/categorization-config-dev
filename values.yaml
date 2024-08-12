@@ -23,13 +23,11 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations:
-  vault.hashicorp.com/agent-inject: "true"
-  vault.hashicorp.com/role: categorizer
-  vault.hashicorp.com/agent-inject-secret-config: categorizer/database
-  vault.hashicorp.com/agent-inject-template-config: |
-     export VAULT_DATASOURCE_USERNAME="{{ .data.data.username }}"
-     export VAULT_DATASOURCE_PASSWORD="{{ .data.data.password }}"
+#podAnnotations:
+#  vault.hashicorp.com/agent-inject: "true"
+#  vault.hashicorp.com/role: categorizer
+#  vault.hashicorp.com/agent-inject-secret-config: categorizer/database
+ 
 podSecurityContext: {}
   # fsGroup: 2000
 
