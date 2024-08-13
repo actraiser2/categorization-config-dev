@@ -16,7 +16,7 @@ data:
           authentication-database: admin
       cloud:
         vault:
-          host: vault-server
+          host: vault-server.vault.svc
           port: 8200
           scheme: http
           authentication: KUBERNETES
