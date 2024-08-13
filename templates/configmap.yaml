@@ -20,6 +20,10 @@ data:
           kubernetes:
             role: categorizer
             kubernetes-path: kubernetes
+      config:
+        import:
+          - optional:vault://categorizer/database?prefix=m.
+          - optional:vault://categorizer/kafka?prefix=kafka.
           
 kind: ConfigMap
 metadata:
