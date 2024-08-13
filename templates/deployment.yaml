@@ -42,7 +42,16 @@ spec:
                 secretKeyRef:
                   name: categorizer
                   key: DATASOURCE_USERNAME
-                
+            - name: MONGO_USERNAME
+              envForm:
+                secretKeyRef:
+                  name: categorizer
+                  key: MONGO_USERNAME
+            - name: MONGO_PASSWORD
+              envFrom:
+                secretKeyRef:
+                  name: categorizer
+                  key: MONGO_PASSWORDD 
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"

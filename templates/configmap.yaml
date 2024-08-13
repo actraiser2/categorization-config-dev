@@ -7,6 +7,13 @@ data:
       hikari:
         maximun-pool-size: 15
         max-life-time: 600000
+      data:
+        mongodb:
+          host: mongo-mongodb.database.svc
+          username: ${MONGO_USERNAME}
+          password: ${MONGO_PASSWORD}
+          database: recibosDB
+          authentication-database: admin
 kind: ConfigMap
 metadata:
   name: categorizer
