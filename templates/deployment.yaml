@@ -43,12 +43,12 @@ spec:
                   name: categorizer
                   key: DATASOURCE_USERNAME
             - name: MONGO_USERNAME
-              envForm:
+              valueFrom:
                 secretKeyRef:
                   name: categorizer
                   key: MONGO_USERNAME
             - name: MONGO_PASSWORD
-              envFrom:
+              valueFrom:
                 secretKeyRef:
                   name: categorizer
                   key: MONGO_PASSWORDD 
