@@ -22,8 +22,8 @@ data:
             kubernetes-path: kubernetes
       config:
         import:
-          - optional:vault://categorizer/database?prefix=m.
-          - optional:vault://categorizer/kafka?prefix=kafka.
+          - vault://categorizer/database?prefix=m.
+          - vault://categorizer/kafka?prefix=kafka.
           
 kind: ConfigMap
 metadata:
