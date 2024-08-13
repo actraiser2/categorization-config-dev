@@ -16,13 +16,16 @@ data:
           authentication-database: admin
       cloud:
         vault:
+          host: vault-server
+          port: 8200
+          scheme: http
           authentication: KUBERNETES
           kubernetes:
             role: categorizer
             kubernetes-path: kubernetes
       config:
         import:
-          - vault://categorizer/database?prefix=m.
+          - vault://categorizer/database?prefix=database.
           - vault://categorizer/kafka?prefix=kafka.
           
 kind: ConfigMap
