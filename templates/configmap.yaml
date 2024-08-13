@@ -14,6 +14,13 @@ data:
           password: ${MONGO_PASSWORD}
           database: recibosDB
           authentication-database: admin
+      cloud:
+        vault:
+          authentication: KUBERNETES
+          kubernetes:
+            role: categorizer
+            kubernetes-path: kubernetes
+          
 kind: ConfigMap
 metadata:
   name: categorizer
