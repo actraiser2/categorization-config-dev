@@ -90,6 +90,7 @@ spec:
                 path: application.yaml
         - name: azure-csi-secrets
           csi:
+            readOnly: true
             nodePublishSecretRef:
               name: azure-vault-secret
             driver: secrets-store.csi.k8s.io
