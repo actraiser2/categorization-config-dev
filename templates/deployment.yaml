@@ -52,6 +52,11 @@ spec:
                 secretKeyRef:
                   name: categorizer
                   key: MONGO_PASSWORD 
+            - name: AZURE_DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: azure-vault-secret-plain
+                  key: PARAMETROS_DATABASE_USERNAME 
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
