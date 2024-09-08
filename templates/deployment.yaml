@@ -79,6 +79,8 @@ spec:
           volumeMounts:
             - name: application-yaml
               mountPath: /workspace/source/src/config
+            - name: azure-csi-secrets
+              mountPath: /mnt/secrets/azure-secrets
       volumes:
         - name: application-yaml
           configMap:
@@ -86,6 +88,13 @@ spec:
             items:
               - key: application.yaml
                 path: application.yaml
+        - name: azure-csi-secrets
+          csi:
+            nodePublishSecretRef:
+              azure-vault-secret
+            driver: secrets-store.csi.x-k8s.io
+            volumeAttributes:
+              secretProviderClass: azure-vault-secret-provider
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
