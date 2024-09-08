@@ -91,7 +91,7 @@ spec:
         - name: azure-csi-secrets
           csi:
             nodePublishSecretRef:
-              azure-vault-secret
+              name: azure-vault-secret
             driver: secrets-store.csi.k8s.io
             volumeAttributes:
               secretProviderClass: azure-vault-secret-provider
