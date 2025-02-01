@@ -84,8 +84,7 @@ spec:
           volumeMounts:
             - name: application-yaml
               mountPath: /workspace/source/src/config
-            - name: azure-csi-secrets
-              mountPath: /mnt/secrets/azure-secrets
+      
       volumes:
         - name: application-yaml
           configMap:
