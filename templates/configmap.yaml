@@ -14,10 +14,6 @@ data:
           password: ${MONGO_PASSWORD}
           database: recibosDB
           authentication-database: admin
-      config:
-        import:
-          - vault://categorizer/database?prefix=database.
-          - vault://categorizer/kafka?prefix=kafka.
           
 kind: ConfigMap
 metadata:
