@@ -93,14 +93,7 @@ spec:
             items:
               - key: application.yaml
                 path: application.yaml
-        - name: azure-csi-secrets
-          csi:
-            readOnly: true
-            nodePublishSecretRef:
-              name: azure-vault-secret
-            driver: secrets-store.csi.k8s.io
-            volumeAttributes:
-              secretProviderClass: azure-vault-secret-provider
+
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
