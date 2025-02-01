@@ -14,15 +14,6 @@ data:
           password: ${MONGO_PASSWORD}
           database: recibosDB
           authentication-database: admin
-      cloud:
-        vault:
-          host: vault-server.vault.svc
-          port: 8200
-          scheme: http
-          authentication: KUBERNETES
-          kubernetes:
-            role: categorizer
-            kubernetes-path: kubernetes
       config:
         import:
           - vault://categorizer/database?prefix=database.
